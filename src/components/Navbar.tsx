@@ -1,12 +1,12 @@
-import { Menu, ShoppingBag, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { useCart } from '../cart'
-import { useTranslation, type Locale } from '../i18n'
+import { useTranslation } from '../i18n'
+import IconButton from './IconButton'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar() {
-  const { count } = useCart()
-  const { t, locale, setLocale } = useTranslation()
+  const { t } = useTranslation()
   const [open, setOpen] = useState(false)
 
   const links = [
@@ -14,12 +14,13 @@ export default function Navbar() {
     { to: '/products', label: t('nav.shop') },
   ]
 
-  const languages: Locale[] = ['en', 'ar']
-
   return (
-    <header className="sticky top-0 z-40 border-b border-sand bg-paper">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
-        <Link to="/" className="font-serif text-2xl tracking-tight">
+    <header className="sticky top-0 z-40 border-b border-sand bg-paper/95 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-4 md:px-6">
+        <Link
+          to="/"
+          className="font-serif text-2xl tracking-tight text-ink transition hover:text-clay"
+        >
           {t('brand')}
         </Link>
 
@@ -30,7 +31,9 @@ export default function Navbar() {
               to={link.to}
               end={link.to === '/'}
               className={({ isActive }) =>
-                isActive ? 'text-ink' : 'text-muted hover:text-ink'
+                isActive
+                  ? 'text-ink underline decoration-clay decoration-2 underline-offset-8'
+                  : 'text-muted transition hover:text-ink'
               }
             >
               {link.label}
@@ -38,53 +41,23 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div
-            className="flex items-center rounded-full bg-sand p-0.5 text-xs"
-            role="group"
-            aria-label={t('lang.switchTo')}
-          >
-            {languages.map((code) => (
-              <button
-                key={code}
-                type="button"
-                onClick={() => setLocale(code)}
-                className={`rounded-full px-2.5 py-1.5 ${
-                  locale === code
-                    ? 'bg-ink text-paper'
-                    : 'text-muted hover:text-ink'
-                }`}
-              >
-                {t(`lang.${code}`)}
-              </button>
-            ))}
-          </div>
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          <LanguageSwitcher />
 
-          <Link
-            to="/cart"
-            className="relative rounded-full p-2 hover:bg-sand"
-            aria-label={t('nav.openCart')}
-          >
-            <ShoppingBag size={20} />
-            {count > 0 && (
-              <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-ink px-1 text-[11px] text-paper">
-                {count}
-              </span>
-            )}
-          </Link>
-          <button
-            type="button"
-            className="rounded-full p-2 hover:bg-sand md:hidden"
-            onClick={() => setOpen((value) => !value)}
+          <IconButton
+            className="md:hidden"
             aria-label={t('nav.toggleMenu')}
+            tone="soft"
+            active={open}
+            onClick={() => setOpen((value) => !value)}
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </IconButton>
         </div>
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-3 border-t border-sand px-4 py-4 text-sm md:hidden">
+        <nav className="flex flex-col gap-3 border-t border-sand bg-sand/40 px-4 py-4 text-sm md:hidden">
           {links.map((link) => (
             <NavLink
               key={link.to}
@@ -92,7 +65,7 @@ export default function Navbar() {
               end={link.to === '/'}
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                isActive ? 'text-ink' : 'text-muted'
+                isActive ? 'font-medium text-clay' : 'text-muted hover:text-ink'
               }
             >
               {link.label}

@@ -16,28 +16,31 @@
     "shop": "Shop",
     "allProducts": "All products",
     "help": "Help",
-    "onlineOnly": "Online only — we ship worldwide.",
-    "shipping": "Orders ship within 3–5 business days.",
-    "questions": "Questions? hello@clothingstore.com",
+    "onlineOnly": "Order through WhatsApp — no online payment on the site.",
+    "shipping": "We confirm size, color, and delivery details on WhatsApp.",
+    "questions": "Message us on WhatsApp to place an order.",
     "rights": "All rights reserved."
   },
   "hero": {
     "eyebrow": "Spring edit",
     "title": "Quiet pieces, made to last.",
-    "body": "Tailored coats, washed linen, and everyday knits — a considered wardrobe without the noise.",
+    "body": "Browse the collection, choose your size and color, then order through WhatsApp.",
     "cta": "Shop the collection",
-    "badge": "New arrivals · Limited run",
+    "badge": "Order via WhatsApp",
     "imageAlt": "Editorial lookbook"
   },
   "home": {
     "featured": "Featured",
     "title": "This week’s edit",
-    "viewAll": "View all"
+    "viewAll": "View all",
+    "browseProducts": "Browse products",
+    "whatsappTitle": "Order easily via WhatsApp",
+    "whatsappBody": "Choose the product, size, and color, then tap Order via WhatsApp to complete your request."
   },
   "shop": {
     "eyebrow": "Catalog",
     "title": "Shop",
-    "body": "Twelve pieces, three categories. Filter by wardrobe and open any item for sizes and details.",
+    "body": "Twelve pieces, three categories. Open any item to choose size and color, then order on WhatsApp.",
     "all": "All"
   },
   "categories": {
@@ -49,9 +52,16 @@
     "notFound": "Piece not found",
     "backToShop": "Back to shop",
     "size": "Size",
+    "color": "Color",
+    "viewProduct": "View product",
+    "orderWhatsApp": "Order via WhatsApp",
+    "selectOptions": "Please select size and color first.",
     "addToBag": "Add to bag",
     "addedToBag": "Added to bag",
     "buyNow": "Buy now"
+  },
+  "whatsapp": {
+    "generalMessage": "Hello, I’d like to ask about your clothing collection and how to place an order."
   },
   "cart": {
     "emptyTitle": "Your bag is empty",

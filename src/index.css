@@ -7,8 +7,11 @@
   --color-ink: #161412;
   --color-paper: #f6f1ea;
   --color-sand: #ebe3d6;
+  --color-sand-deep: #ddd2c0;
   --color-clay: #c45c26;
+  --color-clay-soft: #edd6c7;
   --color-muted: #6f675f;
+  --color-selection: #e8c9b4;
 }
 
 html,
@@ -50,5 +53,5 @@ html[lang='ar'] .font-serif {
 }
 
 ::selection {
-  background: #e8c9b4;
+  background: var(--color-selection);
 }

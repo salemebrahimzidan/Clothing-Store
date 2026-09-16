@@ -11,6 +11,26 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1200&q=80',
     sizes: ['XS', 'S', 'M', 'L'],
+    colors: [
+      {
+        name: 'Sand',
+        hex: '#c4b198',
+        image:
+          'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Olive',
+        hex: '#6b7340',
+        image:
+          'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Ivory',
+        hex: '#f2ebe0',
+        image:
+          'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
     featured: true,
   },
   {
@@ -23,6 +43,26 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=80',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    colors: [
+      {
+        name: 'Black',
+        hex: '#1a1a1a',
+        image:
+          'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Camel',
+        hex: '#c08a4f',
+        image:
+          'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Navy',
+        hex: '#1f2a44',
+        image:
+          'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
     featured: true,
   },
   {
@@ -35,6 +75,20 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80',
     sizes: ['24', '25', '26', '27', '28', '29'],
+    colors: [
+      {
+        name: 'Light Wash',
+        hex: '#9bb5c9',
+        image:
+          'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Indigo',
+        hex: '#2f4a6d',
+        image:
+          'https://images.unsplash.com/photo-1582418702050-061b3a0f0c0a?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
   },
   {
     id: 'cashmere-crew',
@@ -46,6 +100,26 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1200&q=80',
     sizes: ['XS', 'S', 'M', 'L'],
+    colors: [
+      {
+        name: 'Cream',
+        hex: '#efe6d6',
+        image:
+          'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Grey',
+        hex: '#8a8a8a',
+        image:
+          'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Black',
+        hex: '#1a1a1a',
+        image:
+          'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
   },
   {
     id: 'camel-overcoat',
@@ -57,6 +131,20 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=1200&q=80',
     sizes: ['S', 'M', 'L', 'XL'],
+    colors: [
+      {
+        name: 'Camel',
+        hex: '#c08a4f',
+        image:
+          'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Charcoal',
+        hex: '#3d3d3d',
+        image:
+          'https://images.unsplash.com/photo-1544923246-77307dd628ce?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
     featured: true,
   },
   {
@@ -69,6 +157,26 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1200&q=80',
     sizes: ['S', 'M', 'L', 'XL'],
+    colors: [
+      {
+        name: 'White',
+        hex: '#f5f5f5',
+        image:
+          'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Sky Blue',
+        hex: '#9ec5e8',
+        image:
+          'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Stripe',
+        hex: '#c9d6e3',
+        image:
+          'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
     featured: true,
   },
   {
@@ -81,6 +189,26 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=1200&q=80',
     sizes: ['30', '32', '34', '36'],
+    colors: [
+      {
+        name: 'Black',
+        hex: '#1a1a1a',
+        image:
+          'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Beige',
+        hex: '#d2b48c',
+        image:
+          'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Olive',
+        hex: '#6b7340',
+        image:
+          'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
   },
   {
     id: 'heavyweight-hoodie',
@@ -92,6 +220,26 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1556821840-3a69f8430b99?auto=format&fit=crop&w=1200&q=80',
     sizes: ['S', 'M', 'L', 'XL'],
+    colors: [
+      {
+        name: 'Black',
+        hex: '#1a1a1a',
+        image:
+          'https://images.unsplash.com/photo-1556821840-3a69f8430b99?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Heather Grey',
+        hex: '#a8a8a8',
+        image:
+          'https://images.unsplash.com/photo-1509942772902-268acb76cce7?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Forest',
+        hex: '#2f4f3e',
+        image:
+          'https://images.unsplash.com/photo-1578768079052-aa76e52ff62e?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
   },
   {
     id: 'leather-tote',
@@ -103,6 +251,20 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=80',
     sizes: ['One size'],
+    colors: [
+      {
+        name: 'Tan',
+        hex: '#b07848',
+        image:
+          'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Black',
+        hex: '#1a1a1a',
+        image:
+          'https://images.unsplash.com/photo-1590874103328-eac38a67478e?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
     featured: true,
   },
   {
@@ -115,6 +277,26 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=1200&q=80',
     sizes: ['One size'],
+    colors: [
+      {
+        name: 'Grey',
+        hex: '#8a8a8a',
+        image:
+          'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Burgundy',
+        hex: '#722f37',
+        image:
+          'https://images.unsplash.com/photo-1601924638867-3a6de6b7a500?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Navy',
+        hex: '#1f2a44',
+        image:
+          'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
   },
   {
     id: 'leather-sneakers',
@@ -126,6 +308,20 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80',
     sizes: ['36', '37', '38', '39', '40', '41', '42', '43', '44'],
+    colors: [
+      {
+        name: 'White',
+        hex: '#f5f5f5',
+        image:
+          'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Black',
+        hex: '#1a1a1a',
+        image:
+          'https://images.unsplash.com/photo-1491553895911-0055cfa702bf?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
   },
   {
     id: 'silk-bandana',
@@ -137,6 +333,20 @@ export const products: Product[] = [
     image:
       'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=1200&q=80',
     sizes: ['One size'],
+    colors: [
+      {
+        name: 'Ivory Print',
+        hex: '#f2ebe0',
+        image:
+          'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=1200&q=80',
+      },
+      {
+        name: 'Navy Print',
+        hex: '#1f2a44',
+        image:
+          'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=1200&q=80',
+      },
+    ],
   },
 ]
 
