@@ -1,0 +1,136 @@
+{
+  "brand": "Clothing Store",
+  "lang": {
+    "en": "English",
+    "ar": "عربي",
+    "switchTo": "Language"
+  },
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "openCart": "Open cart",
+    "toggleMenu": "Toggle menu"
+  },
+  "footer": {
+    "tagline": "A small clothing house for well-cut staples and seasonal extras.",
+    "shop": "Shop",
+    "allProducts": "All products",
+    "help": "Help",
+    "onlineOnly": "Online only — we ship worldwide.",
+    "shipping": "Orders ship within 3–5 business days.",
+    "questions": "Questions? hello@clothingstore.com",
+    "rights": "All rights reserved."
+  },
+  "hero": {
+    "eyebrow": "Spring edit",
+    "title": "Quiet pieces, made to last.",
+    "body": "Tailored coats, washed linen, and everyday knits — a considered wardrobe without the noise.",
+    "cta": "Shop the collection",
+    "badge": "New arrivals · Limited run",
+    "imageAlt": "Editorial lookbook"
+  },
+  "home": {
+    "featured": "Featured",
+    "title": "This week’s edit",
+    "viewAll": "View all"
+  },
+  "shop": {
+    "eyebrow": "Catalog",
+    "title": "Shop",
+    "body": "Twelve pieces, three categories. Filter by wardrobe and open any item for sizes and details.",
+    "all": "All"
+  },
+  "categories": {
+    "Women": "Women",
+    "Men": "Men",
+    "Accessories": "Accessories"
+  },
+  "product": {
+    "notFound": "Piece not found",
+    "backToShop": "Back to shop",
+    "size": "Size",
+    "addToBag": "Add to bag",
+    "addedToBag": "Added to bag",
+    "buyNow": "Buy now"
+  },
+  "cart": {
+    "emptyTitle": "Your bag is empty",
+    "emptyBody": "Add a few pieces from the shop.",
+    "continueShopping": "Continue shopping",
+    "title": "Bag",
+    "size": "Size {{size}}",
+    "decreaseQuantity": "Decrease quantity",
+    "increaseQuantity": "Increase quantity",
+    "removeItem": "Remove item",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout"
+  },
+  "checkout": {
+    "emptyTitle": "Nothing to check out",
+    "shopFirst": "Shop first",
+    "confirmed": "Order confirmed",
+    "thankYou": "Thank you",
+    "confirmationBody": "A confirmation will arrive by email. Your pieces ship within 3–5 days.",
+    "backHome": "Back home",
+    "title": "Checkout",
+    "fullName": "Full name",
+    "email": "Email",
+    "shippingAddress": "Shipping address",
+    "city": "City",
+    "postalCode": "Postal code",
+    "placeOrder": "Place order · {{total}}",
+    "order": "Order",
+    "total": "Total",
+    "editBag": "Edit bag"
+  },
+  "catalog": {
+    "linen-wrap-dress": {
+      "name": "Linen Wrap Dress",
+      "description": "A fluid wrap silhouette in washed linen. Soft drape, adjustable tie waist, and a midi length that moves with you."
+    },
+    "wool-tailored-blazer": {
+      "name": "Wool Tailored Blazer",
+      "description": "Structured shoulders, a nipped waist, and a lightly padded lapel. Cut from Italian wool for everyday polish."
+    },
+    "wide-leg-denim": {
+      "name": "Wide-Leg Denim",
+      "description": "High-rise wide-leg jeans in a vintage wash. Rigid cotton that softens with wear and holds a clean crease."
+    },
+    "cashmere-crew": {
+      "name": "Cashmere Crew Knit",
+      "description": "A weightless crewneck in Scottish cashmere. Ribbed cuffs and a relaxed body for layering through the season."
+    },
+    "camel-overcoat": {
+      "name": "Camel Overcoat",
+      "description": "A classic single-breasted overcoat in camel hair. Notch lapel, welt pockets, and a full lining for cool evenings."
+    },
+    "oxford-shirt": {
+      "name": "Oxford Shirt",
+      "description": "Button-down oxford cloth with a boxy, slightly cropped cut. Washed for a lived-in hand from the first wear."
+    },
+    "pleated-trousers": {
+      "name": "Pleated Trousers",
+      "description": "Single-pleat trousers in a drapey wool blend. Tapered from the knee with a clean break at the shoe."
+    },
+    "heavyweight-hoodie": {
+      "name": "Heavyweight Hoodie",
+      "description": "Brushed fleece hoodie with a generous hood and dropped shoulders. Cut for warmth without bulk."
+    },
+    "leather-tote": {
+      "name": "Leather Tote",
+      "description": "Vegetable-tanned leather tote with an open top and interior zip pocket. Softens and darkens with age."
+    },
+    "wool-scarf": {
+      "name": "Merino Scarf",
+      "description": "A long merino scarf in a herringbone weave. Light enough for indoors, warm enough for a city commute."
+    },
+    "leather-sneakers": {
+      "name": "Court Sneakers",
+      "description": "Low-profile leather sneakers with a gum sole. Minimal branding and a cushioned insole for all-day wear."
+    },
+    "silk-bandana": {
+      "name": "Silk Bandana",
+      "description": "Printed silk twill bandana. Wear it at the neck, in the hair, or tied to a bag handle."
+    }
+  }
+}

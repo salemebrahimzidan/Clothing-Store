@@ -1,20 +1,23 @@
 import { Minus, Plus, Trash2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../cart'
+import { useTranslation } from '../i18n'
+import { formatCurrency } from '../utils/formatCurrency'
 
 export default function Cart() {
   const { items, updateQuantity, removeItem, total } = useCart()
+  const { t, locale } = useTranslation()
 
   if (items.length === 0) {
     return (
       <section className="mx-auto max-w-3xl px-4 py-20 text-center">
-        <h1 className="font-serif text-4xl">Your bag is empty</h1>
-        <p className="mt-3 text-muted">Add a few pieces from the shop.</p>
+        <h1 className="font-serif text-4xl">{t('cart.emptyTitle')}</h1>
+        <p className="mt-3 text-muted">{t('cart.emptyBody')}</p>
         <Link
           to="/products"
           className="mt-8 inline-flex rounded-full bg-ink px-6 py-3 text-sm text-paper"
         >
-          Continue shopping
+          {t('cart.continueShopping')}
         </Link>
       </section>
     )
@@ -22,7 +25,7 @@ export default function Cart() {
 
   return (
     <section className="mx-auto max-w-4xl px-4 py-12 md:px-6">
-      <h1 className="font-serif text-4xl">Bag</h1>
+      <h1 className="font-serif text-4xl">{t('cart.title')}</h1>
       <ul className="mt-8 divide-y divide-sand">
         {items.map((item) => (
           <li
@@ -35,9 +38,15 @@ export default function Cart() {
               className="h-28 w-24 rounded-2xl object-cover"
             />
             <div className="flex-1">
-              <p className="font-serif text-xl">{item.product.name}</p>
-              <p className="text-sm text-muted">Size {item.size}</p>
-              <p className="mt-1 text-sm">${item.product.price}</p>
+              <p className="font-serif text-xl">
+                {t(`catalog.${item.product.id}.name`)}
+              </p>
+              <p className="text-sm text-muted">
+                {t('cart.size', { size: item.size })}
+              </p>
+              <p className="mt-1 text-sm">
+                {formatCurrency(item.product.price, locale)}
+              </p>
             </div>
             <div className="flex items-center gap-3">
               <button
@@ -50,7 +59,7 @@ export default function Cart() {
                     item.quantity - 1,
                   )
                 }
-                aria-label="Decrease quantity"
+                aria-label={t('cart.decreaseQuantity')}
               >
                 <Minus size={14} />
               </button>
@@ -65,7 +74,7 @@ export default function Cart() {
                     item.quantity + 1,
                   )
                 }
-                aria-label="Increase quantity"
+                aria-label={t('cart.increaseQuantity')}
               >
                 <Plus size={14} />
               </button>
@@ -73,7 +82,7 @@ export default function Cart() {
                 type="button"
                 className="rounded-full p-2 text-muted hover:text-ink"
                 onClick={() => removeItem(item.product.id, item.size)}
-                aria-label="Remove item"
+                aria-label={t('cart.removeItem')}
               >
                 <Trash2 size={16} />
               </button>
@@ -82,14 +91,14 @@ export default function Cart() {
         ))}
       </ul>
       <div className="mt-8 flex items-center justify-between border-t border-sand pt-6">
-        <p className="text-muted">Subtotal</p>
-        <p className="font-serif text-3xl">${total}</p>
+        <p className="text-muted">{t('cart.subtotal')}</p>
+        <p className="font-serif text-3xl">{formatCurrency(total, locale)}</p>
       </div>
       <Link
         to="/checkout"
         className="mt-6 inline-flex rounded-full bg-ink px-6 py-3 text-sm text-paper"
       >
-        Checkout
+        {t('cart.checkout')}
       </Link>
     </section>
   )

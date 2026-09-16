@@ -1,8 +1,9 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: 'Fraunces', ui-serif, Georgia, serif;
+  --font-sans: 'Outfit', 'IBM Plex Sans Arabic', ui-sans-serif, system-ui,
+    sans-serif;
+  --font-serif: 'Fraunces', 'Amiri', ui-serif, Georgia, serif;
   --color-ink: #161412;
   --color-paper: #f6f1ea;
   --color-sand: #ebe3d6;
@@ -19,9 +20,33 @@ body,
 body {
   margin: 0;
   font-family: var(--font-sans);
+  font-optical-sizing: auto;
   background: var(--color-paper);
   color: var(--color-ink);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html[lang='ar'] body {
+  font-family: 'IBM Plex Sans Arabic', 'Outfit', ui-sans-serif, system-ui,
+    sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+
+html[lang='ar'] .font-serif {
+  font-family: 'Amiri', 'Fraunces', ui-serif, Georgia, serif;
+  letter-spacing: 0;
+  line-height: 1.35;
 }
 
 ::selection {

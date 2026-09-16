@@ -2,21 +2,25 @@ import { Menu, ShoppingBag, X } from 'lucide-react'
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { useCart } from '../cart'
-
-const links = [
-  { to: '/', label: 'Home' },
-  { to: '/products', label: 'Shop' },
-]
+import { useTranslation, type Locale } from '../i18n'
 
 export default function Navbar() {
   const { count } = useCart()
+  const { t, locale, setLocale } = useTranslation()
   const [open, setOpen] = useState(false)
+
+  const links = [
+    { to: '/', label: t('nav.home') },
+    { to: '/products', label: t('nav.shop') },
+  ]
+
+  const languages: Locale[] = ['en', 'ar']
 
   return (
     <header className="sticky top-0 z-40 border-b border-sand bg-paper">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
         <Link to="/" className="font-serif text-2xl tracking-tight">
-          Clothing Store
+          {t('brand')}
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm tracking-wide md:flex">
@@ -34,11 +38,32 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div
+            className="flex items-center rounded-full bg-sand p-0.5 text-xs"
+            role="group"
+            aria-label={t('lang.switchTo')}
+          >
+            {languages.map((code) => (
+              <button
+                key={code}
+                type="button"
+                onClick={() => setLocale(code)}
+                className={`rounded-full px-2.5 py-1.5 ${
+                  locale === code
+                    ? 'bg-ink text-paper'
+                    : 'text-muted hover:text-ink'
+                }`}
+              >
+                {t(`lang.${code}`)}
+              </button>
+            ))}
+          </div>
+
           <Link
             to="/cart"
             className="relative rounded-full p-2 hover:bg-sand"
-            aria-label="Open cart"
+            aria-label={t('nav.openCart')}
           >
             <ShoppingBag size={20} />
             {count > 0 && (
@@ -51,7 +76,7 @@ export default function Navbar() {
             type="button"
             className="rounded-full p-2 hover:bg-sand md:hidden"
             onClick={() => setOpen((value) => !value)}
-            aria-label="Toggle menu"
+            aria-label={t('nav.toggleMenu')}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
