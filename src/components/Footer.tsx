@@ -20,13 +20,13 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-sm">
-          <p className="mb-3 font-medium">Visit</p>
+          <p className="mb-3 font-medium">Help</p>
           <p className="text-muted">
-            18 Mercer Street
+            Online only — we ship worldwide.
             <br />
-            New York, NY
+            Orders ship within 3–5 business days.
             <br />
-            Open Tue–Sun, 11–7
+            Questions? hello@clothingstore.com
           </p>
         </div>
       </div>
