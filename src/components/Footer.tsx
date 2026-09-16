@@ -31,6 +31,14 @@ export default function Footer() {
             <br />
             {t('footer.questions')}
           </p>
+          <a
+            href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER ?? ''}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex text-clay hover:text-ink"
+          >
+            {t('product.orderWhatsApp')}
+          </a>
         </div>
       </div>
       <p className="border-t border-sand px-4 py-4 text-center text-xs text-muted">

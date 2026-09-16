@@ -1,5 +1,11 @@
 export type ProductCategory = 'Women' | 'Men' | 'Accessories'
 
+export type ProductColor = {
+  name: string
+  hex: string
+  image: string
+}
+
 export type Product = {
   id: string
   name: string
@@ -8,6 +14,7 @@ export type Product = {
   description: string
   image: string
   sizes: string[]
+  colors: ProductColor[]
   featured?: boolean
 }
 
