@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="mt-auto border-t border-sand bg-sand/40">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-3 md:px-6">
         <div>
-          <p className="font-serif text-2xl">Atelier</p>
+          <p className="font-serif text-2xl">Clothing Store</p>
           <p className="mt-3 max-w-xs text-sm text-muted">
             A small clothing house for well-cut staples and seasonal extras.
           </p>
@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
       </div>
       <p className="border-t border-sand px-4 py-4 text-center text-xs text-muted">
-        © {new Date().getFullYear()} Atelier. All rights reserved.
+        © {new Date().getFullYear()} Clothing Store. All rights reserved.
       </p>
     </footer>
   )
