@@ -1,8 +1,13 @@
+import { MessageCircle } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from '../i18n'
 import type { Product } from '../types/product'
 import { formatCurrency } from '../utils/formatCurrency'
+import {
+  buildWhatsAppOrderMessage,
+  openWhatsAppOrder,
+} from '../utils/whatsapp'
 
 type ProductCardProps = {
   product: Product
@@ -15,24 +20,71 @@ export default function ProductCard({ product }: ProductCardProps) {
   const selectedColor = product.colors.find((item) => item.name === activeColor)
   const displayImage = selectedColor?.image ?? product.image
 
+  function handleWhatsApp() {
+    openWhatsAppOrder(
+      buildWhatsAppOrderMessage({
+        productName: name,
+        price: product.price,
+        color: selectedColor?.name,
+        imageUrl: displayImage,
+      }),
+    )
+  }
+
   return (
-    <article className="group">
-      <div className="relative overflow-hidden rounded-3xl bg-sand">
+    <article className="product-card group flex h-full flex-col">
+      <div className="product-card__media relative overflow-hidden rounded-2xl bg-sand">
         <Link to={`/products/${product.id}`} className="block">
           <img
             key={displayImage}
             src={displayImage}
             alt={name}
-            className="h-80 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+            className="product-card__image h-80 w-full object-cover"
           />
         </Link>
 
-        <p className="pointer-events-none absolute end-3 top-3 rounded-full bg-clay px-3 py-1 text-xs font-medium tracking-wide text-paper shadow-sm">
-          {formatCurrency(product.price, locale)}
-        </p>
+        <div className="product-card__top">
+          {product.featured ? (
+            <span className="product-card__badge">
+              {t('product.featuredBadge')}
+            </span>
+          ) : (
+            <span />
+          )}
+          <p className="product-card__price">
+            {formatCurrency(product.price, locale)}
+          </p>
+        </div>
+
+        <div className="product-card__actions">
+          <Link
+            to={`/products/${product.id}`}
+            className="product-card__btn product-card__btn--primary"
+          >
+            {t('product.viewProduct')}
+          </Link>
+          <button
+            type="button"
+            onClick={handleWhatsApp}
+            className="product-card__btn product-card__btn--whatsapp"
+            aria-label={t('product.orderWhatsApp')}
+          >
+            <MessageCircle className="product-card__wa-icon" strokeWidth={2} />
+            <span>{t('product.orderWhatsApp')}</span>
+          </button>
+        </div>
       </div>
 
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+      <div className="mt-3 flex flex-1 flex-col gap-2.5">
+        <h3 className="font-serif text-xl leading-snug text-ink">
+          <Link
+            to={`/products/${product.id}`}
+            className="transition hover:text-clay"
+          >
+            {name}
+          </Link>
+        </h3>
+
         {product.colors.length > 0 ? (
           <div className="flex flex-wrap items-center gap-1.5">
             {product.colors.map((option) => {
@@ -45,8 +97,8 @@ export default function ProductCard({ product }: ProductCardProps) {
                   aria-label={option.name}
                   aria-pressed={active}
                   onClick={() => setActiveColor(option.name)}
-                  className={`overflow-hidden rounded-md border-2 ${
-                    active ? 'border-clay' : 'border-sand'
+                  className={`overflow-hidden rounded-md border-2 transition ${
+                    active ? 'border-clay' : 'border-sand hover:border-sand-deep'
                   }`}
                 >
                   <img
@@ -58,16 +110,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               )
             })}
           </div>
-        ) : (
-          <span />
-        )}
-
-        <Link
-          to={`/products/${product.id}`}
-          className="rounded-full bg-ink px-4 py-2 text-sm text-paper transition hover:bg-clay"
-        >
-          {t('product.viewProduct')}
-        </Link>
+        ) : null}
       </div>
     </article>
   )

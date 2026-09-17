@@ -5,26 +5,38 @@ import { products } from '../data/products'
 import { useTranslation } from '../i18n'
 import type { ProductCategory } from '../types/product'
 
-const filters: Array<'All' | ProductCategory> = [
+const filters: Array<'All' | ProductCategory | 'Featured'> = [
   'All',
   'Women',
   'Men',
-  'Accessories',
+  'Featured',
 ]
 
 export default function Products() {
   const [params, setParams] = useSearchParams()
-  const category = (params.get('category') ?? 'All') as 'All' | ProductCategory
+  const category = params.get('category')
+  const featuredOnly = params.get('featured') === '1'
+  const activeFilter: 'All' | ProductCategory | 'Featured' = featuredOnly
+    ? 'Featured'
+    : ((category as ProductCategory | null) ?? 'All')
   const { t } = useTranslation()
 
   const visible = useMemo(() => {
-    if (category === 'All') return products
+    if (featuredOnly) return products.filter((product) => product.featured)
+    if (!category || category === 'All') return products
     return products.filter((product) => product.category === category)
-  }, [category])
+  }, [category, featuredOnly])
 
-  function filterLabel(filter: 'All' | ProductCategory) {
+  function filterLabel(filter: 'All' | ProductCategory | 'Featured') {
     if (filter === 'All') return t('shop.all')
+    if (filter === 'Featured') return t('categories.Offers')
     return t(`categories.${filter}`)
+  }
+
+  function applyFilter(filter: 'All' | ProductCategory | 'Featured') {
+    if (filter === 'All') setParams({})
+    else if (filter === 'Featured') setParams({ featured: '1' })
+    else setParams({ category: filter })
   }
 
   return (
@@ -40,12 +52,9 @@ export default function Products() {
           <button
             key={filter}
             type="button"
-            onClick={() => {
-              if (filter === 'All') setParams({})
-              else setParams({ category: filter })
-            }}
-            className={`rounded-full px-4 py-2 text-sm ${
-              category === filter
+            onClick={() => applyFilter(filter)}
+            className={`rounded-full px-4 py-2 text-sm transition ${
+              activeFilter === filter
                 ? 'bg-ink text-paper'
                 : 'bg-sand text-ink hover:bg-sand/70'
             }`}
