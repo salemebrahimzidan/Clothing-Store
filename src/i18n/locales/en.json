@@ -8,6 +8,10 @@
   "nav": {
     "home": "Home",
     "shop": "Shop",
+    "categories": "Categories",
+    "offers": "Offers",
+    "contact": "Contact",
+    "whatsapp": "WhatsApp",
     "openCart": "Open cart",
     "toggleMenu": "Toggle menu"
   },
@@ -16,26 +20,42 @@
     "shop": "Shop",
     "allProducts": "All products",
     "help": "Help",
-    "onlineOnly": "Order through WhatsApp — no online payment on the site.",
-    "shipping": "We confirm size, color, and delivery details on WhatsApp.",
-    "questions": "Message us on WhatsApp to place an order.",
-    "rights": "All rights reserved."
+    "onlineOnly": "Order via WhatsApp — no online payment.",
+    "shipping": "We confirm size, color, and delivery on WhatsApp.",
+    "questions": "Message us on WhatsApp to order.",
+    "rights": "All rights reserved.",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "tiktok": "TikTok"
   },
   "hero": {
-    "eyebrow": "Spring edit",
-    "title": "Quiet pieces, made to last.",
-    "body": "Browse the collection, choose your size and color, then order through WhatsApp.",
-    "cta": "Shop the collection",
+    "eyebrow": "New season",
+    "title": "Discover your new style",
+    "body": "A curated edit of the latest fashion — quality pieces at fair prices.",
+    "cta": "Shop now",
     "badge": "Order via WhatsApp",
-    "imageAlt": "Editorial lookbook"
+    "imageAlt": "Editorial fashion lookbook"
   },
   "home": {
-    "featured": "Featured",
-    "title": "This week’s edit",
+    "featured": "Featured products",
+    "title": "Our finest picks",
+    "featuredSubtitle": "Standout pieces selected from the current collection.",
     "viewAll": "View all",
     "browseProducts": "Browse products",
+    "categoriesEyebrow": "Browse",
+    "categoriesTitle": "Shop by category",
+    "offerEyebrow": "Limited offers",
+    "offerTitle": "Offers you shouldn’t miss",
+    "offerBody": "Special discounts on selected pieces — order easily through WhatsApp.",
+    "offerCta": "Explore offers",
+    "contactTitle": "Ready to order?",
+    "contactBody": "Message us on WhatsApp to confirm size, color, and delivery.",
     "whatsappTitle": "Order easily via WhatsApp",
-    "whatsappBody": "Choose the product, size, and color, then tap Order via WhatsApp to complete your request."
+    "whatsappBody": "Choose the product, size, and color, then tap Order via WhatsApp to complete your request.",
+    "bannerLine1": "ORDER VIA",
+    "bannerLine2": "WhatsApp",
+    "bannerCta": "Shop now"
   },
   "shop": {
     "eyebrow": "Catalog",
@@ -46,7 +66,8 @@
   "categories": {
     "Women": "Women",
     "Men": "Men",
-    "Accessories": "Accessories"
+    "Accessories": "Accessories",
+    "Offers": "Offers"
   },
   "product": {
     "notFound": "Piece not found",
@@ -54,6 +75,7 @@
     "size": "Size",
     "color": "Color",
     "viewProduct": "View product",
+    "featuredBadge": "Featured",
     "orderWhatsApp": "Order via WhatsApp",
     "selectOptions": "Please select size and color first.",
     "addToBag": "Add to bag",
