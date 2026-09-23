@@ -1,12 +1,13 @@
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useTranslation } from '../i18n'
 import IconButton from './IconButton'
 import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar() {
   const { t } = useTranslation()
+  const location = useLocation()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -26,10 +27,19 @@ export default function Navbar() {
     return () => window.removeEventListener('keydown', onKey)
   }, [open])
 
+  function handleNavClick(to: string) {
+    setOpen(false)
+    const [path, hash] = to.split('#')
+    if (!hash || location.pathname !== (path || '/')) return
+    requestAnimationFrame(() => {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' })
+    })
+  }
+
   const links = [
     { to: '/', label: t('nav.home'), end: true },
     { to: '/products', label: t('nav.shop') },
-    { to: '/#categories', label: t('nav.categories') },
+    { to: '/categories', label: t('nav.categories') },
   ]
 
   return (
@@ -55,6 +65,7 @@ export default function Navbar() {
               key={link.to}
               to={link.to}
               end={link.end}
+              onClick={() => handleNavClick(link.to)}
               className={({ isActive }) =>
                 isActive && !link.to.includes('#')
                   ? 'text-ink underline decoration-clay decoration-2 underline-offset-8'
@@ -89,7 +100,7 @@ export default function Navbar() {
               key={link.to}
               to={link.to}
               end={link.end}
-              onClick={() => setOpen(false)}
+              onClick={() => handleNavClick(link.to)}
               className={({ isActive }) =>
                 `rounded-xl px-3 py-2.5 text-sm ${
                   isActive && !link.to.includes('#')

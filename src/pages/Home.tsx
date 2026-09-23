@@ -1,5 +1,5 @@
-import { MessageCircle } from 'lucide-react'
-import { useEffect } from 'react'
+import { ArrowRight, MessageCircle } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import { getFeaturedProducts, products } from '../data/products'
@@ -12,6 +12,10 @@ import {
 
 const HERO_IMAGE =
   'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=80'
+
+const FEATURED_CATEGORIES: ProductCategory[] = ['Women', 'Men']
+
+type FeaturedFilter = 'all' | ProductCategory
 
 type CategoryCard = {
   id: string
@@ -37,6 +41,20 @@ export default function Home() {
   const { t } = useTranslation()
   const { hash } = useLocation()
   const homeProducts = getHomeProducts(8)
+  const [featuredFilter, setFeaturedFilter] = useState<FeaturedFilter>('all')
+  const featuredFilters = [
+    { id: 'all' as const, label: t('shop.all'), count: homeProducts.length },
+    ...FEATURED_CATEGORIES.map((category) => ({
+      id: category,
+      label: t(`categories.${category}`),
+      count: homeProducts.filter((product) => product.category === category)
+        .length,
+    })).filter((filter) => filter.count > 0),
+  ]
+  const visibleHomeProducts =
+    featuredFilter === 'all'
+      ? homeProducts
+      : homeProducts.filter((product) => product.category === featuredFilter)
   const offerImage =
     getFeaturedProducts()[0]?.image ?? products[0]?.image ?? HERO_IMAGE
 
@@ -131,31 +149,55 @@ export default function Home() {
       <section
         id="featured"
         className="scroll-mt-24 bg-sand/35"
+        aria-labelledby="featured-title"
       >
-        <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-muted">
-                {t('home.featured')}
-              </p>
-              <h2 className="mt-2 font-serif text-3xl md:text-4xl">
+        <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+          <div className="featured__head">
+            <div className="max-w-xl">
+              <p className="featured__eyebrow">{t('home.featured')}</p>
+              <h2
+                id="featured-title"
+                className="mt-3 font-serif text-3xl leading-tight md:text-[2.625rem]"
+              >
                 {t('home.title')}
               </h2>
-              <p className="mt-2 max-w-lg text-sm text-muted md:text-base">
+              <p className="mt-3 text-sm text-muted md:text-base">
                 {t('home.featuredSubtitle')}
               </p>
             </div>
-            <Link
-              to="/products"
-              className="text-sm font-medium text-muted transition hover:text-ink"
-            >
+            <Link to="/products" className="featured__view-all">
               {t('home.viewAll')}
+              <ArrowRight size={16} strokeWidth={2} />
             </Link>
           </div>
 
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {homeProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+          <div
+            className="filter-bar"
+            role="group"
+            aria-label={t('home.filterLabel')}
+          >
+            {featuredFilters.map((filter) => (
+              <button
+                key={filter.id}
+                type="button"
+                aria-pressed={featuredFilter === filter.id}
+                aria-controls="featured-grid"
+                onClick={() => setFeaturedFilter(filter.id)}
+                className="filter-chip"
+              >
+                {filter.label}
+                <span className="filter-chip__count">{filter.count}</span>
+              </button>
+            ))}
+          </div>
+
+          <div
+            id="featured-grid"
+            key={featuredFilter}
+            className="product-grid"
+          >
+            {visibleHomeProducts.map((product, index) => (
+              <ProductCard key={product.id} product={product} index={index} />
             ))}
           </div>
         </div>

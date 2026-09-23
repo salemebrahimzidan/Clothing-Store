@@ -1,4 +1,4 @@
-export type ProductCategory = 'Women' | 'Men' | 'Accessories'
+export type ProductCategory = 'Women' | 'Men'
 
 export type ProductColor = {
   name: string
