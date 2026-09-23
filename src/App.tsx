@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import { I18nProvider } from './i18n'
+import Categories from './pages/Categories'
 import Home from './pages/Home'
 import ProductDetails from './pages/ProductDetails'
 import Products from './pages/Products'
@@ -25,6 +26,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/categories" element={<Categories />} />
             <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="/cart" element={<Navigate to="/products" replace />} />
             <Route

@@ -64,9 +64,9 @@ export default function Products() {
         ))}
       </div>
 
-      <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((product) => (
-          <ProductCard key={product.id} product={product} />
+      <div key={activeFilter} className="product-grid mt-10">
+        {visible.map((product, index) => (
+          <ProductCard key={product.id} product={product} index={index} />
         ))}
       </div>
     </section>

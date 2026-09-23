@@ -38,10 +38,11 @@
     "imageAlt": "Editorial fashion lookbook"
   },
   "home": {
-    "featured": "Featured products",
-    "title": "Our finest picks",
-    "featuredSubtitle": "Standout pieces selected from the current collection.",
-    "viewAll": "View all",
+    "featured": "Featured collection",
+    "title": "Pieces we love this season",
+    "featuredSubtitle": "Hand-picked staples from the current collection. Preview every color, then order in one message on WhatsApp.",
+    "viewAll": "Shop all",
+    "filterLabel": "Filter products by category",
     "browseProducts": "Browse products",
     "categoriesEyebrow": "Browse",
     "categoriesTitle": "Shop by category",
@@ -60,13 +61,18 @@
   "shop": {
     "eyebrow": "Catalog",
     "title": "Shop",
-    "body": "Twelve pieces, three categories. Open any item to choose size and color, then order on WhatsApp.",
+    "body": "Eight pieces, two categories. Open any item to choose size and color, then order on WhatsApp.",
     "all": "All"
+  },
+  "categoriesPage": {
+    "eyebrow": "Browse",
+    "title": "Categories",
+    "body": "Pick a category to see its pieces, then choose a color and order on WhatsApp.",
+    "items": "{{count}} items"
   },
   "categories": {
     "Women": "Women",
     "Men": "Men",
-    "Accessories": "Accessories",
     "Offers": "Offers"
   },
   "product": {
@@ -76,6 +82,8 @@
     "color": "Color",
     "viewProduct": "View product",
     "featuredBadge": "Featured",
+    "addToWishlist": "Save to wishlist",
+    "removeFromWishlist": "Remove from wishlist",
     "orderWhatsApp": "Order via WhatsApp",
     "selectOptions": "Please select size and color first.",
     "addToBag": "Add to bag",
@@ -147,22 +155,6 @@
     "heavyweight-hoodie": {
       "name": "Heavyweight Hoodie",
       "description": "Brushed fleece hoodie with a generous hood and dropped shoulders. Cut for warmth without bulk."
-    },
-    "leather-tote": {
-      "name": "Leather Tote",
-      "description": "Vegetable-tanned leather tote with an open top and interior zip pocket. Softens and darkens with age."
-    },
-    "wool-scarf": {
-      "name": "Merino Scarf",
-      "description": "A long merino scarf in a herringbone weave. Light enough for indoors, warm enough for a city commute."
-    },
-    "leather-sneakers": {
-      "name": "Court Sneakers",
-      "description": "Low-profile leather sneakers with a gum sole. Minimal branding and a cushioned insole for all-day wear."
-    },
-    "silk-bandana": {
-      "name": "Silk Bandana",
-      "description": "Printed silk twill bandana. Wear it at the neck, in the hair, or tied to a bag handle."
     }
   }
 }

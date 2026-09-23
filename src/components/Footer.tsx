@@ -62,21 +62,26 @@ export default function Footer() {
       id: 'whatsapp' as const,
       href: createWhatsAppOrderUrl(t('whatsapp.generalMessage')),
       label: t('footer.whatsapp'),
+      className: 'bg-[#25D366] text-white hover:bg-[#1ebe57]',
     },
     {
       id: 'instagram' as const,
       href: import.meta.env.VITE_INSTAGRAM_URL || 'https://www.instagram.com/',
       label: t('footer.instagram'),
+      className:
+        'bg-gradient-to-br from-[#F58529] via-[#E1306C] to-[#833AB4] text-white hover:brightness-110',
     },
     {
       id: 'facebook' as const,
       href: import.meta.env.VITE_FACEBOOK_URL || 'https://www.facebook.com/',
       label: t('footer.facebook'),
+      className: 'bg-[#1877F2] text-white hover:bg-[#166fe5]',
     },
     {
       id: 'tiktok' as const,
       href: import.meta.env.VITE_TIKTOK_URL || 'https://www.tiktok.com/',
       label: t('footer.tiktok'),
+      className: 'bg-ink text-paper hover:bg-ink/90',
     },
   ]
 
@@ -104,7 +109,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label={social.label}
               title={social.label}
-              className="inline-flex size-10 items-center justify-center rounded-full bg-paper text-ink transition hover:bg-clay hover:text-paper"
+              className={`inline-flex size-10 items-center justify-center rounded-full transition ${social.className}`}
             >
               {icons[social.id]}
             </a>
